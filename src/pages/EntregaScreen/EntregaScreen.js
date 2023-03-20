@@ -3,8 +3,12 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather'
 import { useNavigation } from "@react-navigation/native";
+import { RadioButton } from "react-native-paper";
+import { useState } from "react";
 
 export default function EntregaScreen() {
+
+    const [checked, setChecked] = useState('first');
 
     const navigation = useNavigation();
     return (
@@ -44,48 +48,53 @@ export default function EntregaScreen() {
                         <Text style={{flex: 1, color: '#0076FF'}}>Trocar endereço</Text>
                     </View>
                 </View>
-                <View style={{height: 50, backgroundColor: 'white', marginTop: 15, paddingHorizontal: 22, justifyContent: 'center'}}>
+                <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" style={{height: 50, backgroundColor: 'white', marginTop: 15, paddingHorizontal: 22, justifyContent: 'center'}} onPress={() => setChecked('first')}>
                     <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flex: 1}}>
                         <View style={{flexDirection: 'row', flex: 1, columnGap: 20}}>
                             <FeatherIcon name="truck" size={20} />
                             <Text>Cohama</Text>
                         </View>
-                        <View style={{flexDirection: 'row', columnGap: 30}}>
+                        <View style={{flexDirection: 'row', columnGap: 30, justifyContent: 'center', alignItems: 'center'}}>
                             <Text>R$39,90</Text>
-                            <View style={{borderWidth: 2, borderRadius: 20, width: 20, height: 20, justifyContent: 'center', alignItems: 'center', borderColor: 'red'}}>
-                                <View style={{width: 12, height: 12, backgroundColor: 'red', borderRadius: 20}}></View>
-                            </View>
+                            <RadioButton
+                                value="first" color="red"
+                                status={ checked === 'first' ? 'checked' : 'unchecked' }
+                            />
                         </View>
                     </View>
-                </View>
-                <View style={{height: 50, backgroundColor: 'white', marginTop: 15, paddingHorizontal: 22, justifyContent: 'center'}}>
+                </TouchableHighlight>
+                <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" style={{height: 50, backgroundColor: 'white', marginTop: 15, paddingHorizontal: 22, justifyContent: 'center'}} onPress={() => setChecked('second')}>
                     <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flex: 1}}>
                         <View style={{flexDirection: 'row', flex: 1, columnGap: 20}}>
                             <FeatherIcon name="truck" size={20} />
                             <Text>Moto</Text>
                         </View>
-                        <View style={{flexDirection: 'row', columnGap: 30}}>
+                        <View style={{flexDirection: 'row', columnGap: 30, justifyContent: 'center', alignItems: 'center'}}>
                             <Text>R$39,90</Text>
-                            <View style={{borderWidth: 2, borderRadius: 20, width: 20, height: 20}}>
+                            <RadioButton
+                                value="second" color="red"
+                                status={ checked === 'second' ? 'checked' : 'unchecked' }
                                 
-                            </View>
+                            />
                         </View>
                     </View>
-                </View>
-                <View style={{height: 50, backgroundColor: 'white', marginTop: 15, paddingHorizontal: 22, justifyContent: 'center'}}>
+                </TouchableHighlight>
+                <TouchableHighlight activeOpacity={0.6} underlayColor="#DDDDDD" style={{height: 50, backgroundColor: 'white', marginTop: 15, paddingHorizontal: 22, justifyContent: 'center'}} onPress={() => setChecked('three')}>
                     <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flex: 1}}>
                         <View style={{flexDirection: 'row', flex: 1, columnGap: 20}}>
                             <FeatherIcon name="truck" size={20} />
                             <Text>Carro</Text>
                         </View>
-                        <View style={{flexDirection: 'row', columnGap: 30}}>
+                        <View style={{flexDirection: 'row', columnGap: 30, justifyContent: 'center', alignItems: 'center'}}>
                             <Text>R$39,90</Text>
-                            <View style={{borderWidth: 2, borderRadius: 20, width: 20, height: 20}}>
+                            <RadioButton
+                                value="three" color="red"
+                                status={ checked === 'three' ? 'checked' : 'unchecked' }
                                 
-                            </View>
+                            />
                         </View>
                     </View>
-                </View>
+                </TouchableHighlight>
             </View>
             <View style={{backgroundColor: 'white', height: 153, paddingHorizontal: 15, paddingVertical: 17, justifyContent: 'space-between'}}>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
