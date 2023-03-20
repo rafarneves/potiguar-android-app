@@ -19,7 +19,7 @@ export default function CategorieSearch() {
         <StatusBar backgroundColor='red' />
         <View style={{backgroundColor: 'red', width: '100%', paddingVertical: 10, paddingHorizontal: 15, justifyContent: 'center', alignItems: 'center', borderTopWidth: 0}}>
           <SearchBar />
-          <View style={{flexDirection: 'row', justifyContent: 'flex-end', width: '100%', columnGap: 46, marginVertical: 10}}>
+          <View style={{flexDirection: 'row', justifyContent: 'flex-end', width: '100%', columnGap: 46, paddingTop: 20, paddingBottom: 10}}>
             <TouchableOpacity style={{flexDirection: 'row', columnGap: 10}} onPress={() => navigation.navigate('Order', {
                 routeName
             })}>

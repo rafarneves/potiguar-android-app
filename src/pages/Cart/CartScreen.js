@@ -8,6 +8,8 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EntregaScreen from '../EntregaScreen/EntregaScreen';
+import PagamentoScreen from '../Pagamento/PagamentoScreen';
+import FinalizacaoScreen from '../FinalizacaoScreen/FinalizacaoScreen';
 
 const HomeStack = createNativeStackNavigator();
 
@@ -111,6 +113,8 @@ export default function EntregaStackScreen() {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Cart" component={CartScreen} options={{headerShown: false}}/>
       <HomeStack.Screen name="Entregas" component={EntregaScreen} options={{headerShown: false}}/>
+      <HomeStack.Screen name="Pagamento" component={PagamentoScreen} options={{headerShown: false}}/>
+      <HomeStack.Screen name="Finalizacao" component={FinalizacaoScreen} options={{headerShown: false}}/>
     </HomeStack.Navigator>
   );
 }
