@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './src/pages/Home/HomeScreen';
+import HomeStackScreen from './src/pages/Home/HomeScreen';
 import CategoriesScreen from './src/pages/Categories/CategoriesScreen';
 import CartScreen from './src/pages/Cart/CartScreen';
 import FavoritesScreen from './src/pages/Favorites/FavoritesScreen';
@@ -10,6 +10,7 @@ import MoreScreen from './src/pages/More/MoreScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import CategorieStackScreen from './src/pages/Categories/CategoriesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,12 +22,27 @@ export default function App() {
       <Tab.Navigator 
         screenOptions={{
           tabBarActiveTintColor: iconColorActive,
-          headerStatusBarHeight: StatusBar.currentHeight
+          headerStatusBarHeight: StatusBar.currentHeight,
+          headerStyle: {
+            backgroundColor: 'red'
+          },
+          tabBarStyle: {
+            height: 60,
+            paddingBottom: 10,
+            paddingTop: 10,
+            paddingHorizontal: 15
+          },
+          tabBarLabelPosition: 'below-icon',
+          tabBarLabelStyle: {
+            paddingTop: 0
+          },
+          tabBarHideOnKeyboard: true
         }}
+        
       >
         <Tab.Screen 
           name="Home" 
-          component={HomeScreen}
+          component={HomeStackScreen}
           options={{
             headerShown:false,
             tabBarIcon: ({ color, size }) => (
@@ -34,8 +50,9 @@ export default function App() {
             )
           }} 
         />
-        <Tab.Screen name="Categorias" component={CategoriesScreen} 
+        <Tab.Screen name="Categorias" component={CategorieStackScreen} 
           options={{
+            headerShown: false,
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="menu" color={color} size={size} />
             ),
@@ -46,6 +63,7 @@ export default function App() {
             tabBarIcon: ({ color, size }) => (
               <AntDesignIcon name="shoppingcart" color={color} size={size} />
             ),
+            headerShown: false
           }} 
         />
         <Tab.Screen name="Favoritos" component={FavoritesScreen} 
