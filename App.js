@@ -12,6 +12,9 @@ import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CategorieStackScreen from './src/pages/Categories/CategoriesScreen';
 
+// Código de autoria de Rafael Arruda das Neves
+// Proibido plágio
+
 const Tab = createBottomTabNavigator();
 
 const iconColorActive = '#ED1C24';
